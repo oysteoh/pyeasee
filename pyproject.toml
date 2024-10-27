@@ -1,0 +1,110 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pyeasee"
+version = "0.8.5"
+description = "Easee EV charger API library"
+readme.file = "README.md"
+readme.content-type = "text/markdown"
+license = {text = "MIT"}
+authors = [
+    {name = "Ola Lidholm", email = "olal@plea.se"}
+]
+urls = { "Homepage" = "https://github.com/yourusername/pyeasee" }
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+requires-python = ">=3.10"
+
+dependencies = [
+    "aiohttp",
+    "attrs",
+    "certifi",
+    "chardet",
+    "idna",
+    "multidict",
+    "packaging",
+    "requests",
+    "urllib3",
+    "yarl",
+    "zipp",
+]
+
+[project.optional-dependencies]
+dev = [
+    "aioresponses",
+    "appdirs",
+    "async-timeout",
+    "autoflake",
+    "black",
+    "bleach",
+    "bump2version",
+    "click",
+    "colorama",
+    "docutils",
+    "flake8",
+    "importlib-metadata",
+    "isort",
+    "json-schema-to-class",
+    "keyring",
+    "lazy-write",
+    "Mako",
+    "Markdown",
+    "MarkupSafe",
+    "mccabe",
+    "more-itertools",
+    "msgpack",
+    "pathspec",
+    "pdoc3",
+    "pkginfo",
+    "pluggy",
+    "py",
+    "pycodestyle",
+    "pyflakes",
+    "Pygments",
+    "pyparsing",
+    "pysignalr",
+    "pytest",
+    "pytest-asyncio",
+    "readme-renderer",
+    "regex",
+    "requests-toolbelt",
+    "rfc3986",
+    "six",
+    "toml",
+    "tqdm",
+    "twine",
+    "wcwidth",
+    "webencodings",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.flake8]
+max-line-length = 120
+ignore = ["E501", "E231", "F403"]
+
+[tool.isort]
+profile = "black"
+force_sort_within_sections = true
+
+[tool.pytest]
+testpaths = ["tests"]
+
+[tool.pytest.ini_options]
+addopts = ["--import-mode=importlib"]
+
+[tool.bumpversion]
+current_version = "0.8.8"
+commit = true
+tag = true
